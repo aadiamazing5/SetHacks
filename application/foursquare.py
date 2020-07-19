@@ -24,9 +24,9 @@ def getVenues(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIM
                 address = venue['location']['address']
                 address_list.append(address)
 
-    json_format = json.dumps(address_list)
+    json_format = json.dumps({"addresses": address_list})
 
-    return json_format
+    return {"addresses": address_list}
 
 
 def returnParams(search, venue_type, transpo):
