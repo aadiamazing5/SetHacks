@@ -28,6 +28,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtXwbSQsAINxOwiYxF6kuDvbZFm0ADGr8"></script>
 
 </head>
 
@@ -40,7 +41,6 @@
 
     <script>
         console.log({{json_data|tojson}});
-        var isActive = {{queried}};
         Vue.component('search-menu', {
             props: ['active'],
             template: `
@@ -106,10 +106,18 @@
             template: `
         <div class="map-wrapper">
             <div class="map-background">
-                <img src="https://picsum.photos/1200/500">
+                <div id="myMap"></div>
             </div>
         </div>
-    `
+    `,
+            mounted: function() {
+                console.log("map: ", google.maps)
+                this.map = new google.maps.Map(document.getElementById('myMap'), {
+                    center: {lat:61.180059, lng: -149.822075},
+                    scrollwheel: false,
+                    zoom: 4
+                })
+            }
         })
 
         Vue.component('app', {
@@ -117,11 +125,12 @@
         <div :class="[isActive ? 'app' : 'container app']">
             <search-menu @active="handleActive" :active="isActive"></search-menu>
             <the-map v-if="isActive"></the-map>
+
         </div>
     `,
             data() {
                 return {
-                    isActive: false
+                    isActive: {{queried}}
                 }
             },
             methods: {
@@ -130,6 +139,13 @@
                 }
             }
         })
+
+
+
+
+
+
+
 
         //Vue Instance
         var app = new Vue({

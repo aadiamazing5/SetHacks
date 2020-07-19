@@ -18,7 +18,7 @@ def index():
         print(json_venues)
         return render_template("index.html", index=True, json_data=json_venues, queried="true")
 
-    return render_template("index.html", index=True, queried="false")
+    return render_template("index.html", index=True, queried="false", json_data={"addresses": []})
 
 
 
