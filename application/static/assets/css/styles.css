@@ -150,8 +150,17 @@ form{
     height: 100%;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
 }
-.map-background img{
+.map-background #myMap{
     width: 100%;
     height: 100%;
     border-radius: 1rem;
 }
+
+<<<<<<< HEAD
+=======
+.vue-map-container {
+    height: 450px;
+    max-width: 992px;
+    width: 100%;
+  }
+>>>>>>> 8cb0d691377c1b5ae4bf68966e41747800186329
