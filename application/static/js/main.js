@@ -1,13 +1,13 @@
 Vue.component('search-menu', {
     template: `
         <div class="search-menu" :style="[(isActive) ? {'top': '0', 'margin': '0', 'border-radius': 'unset'} : {'top': '50%', 'margin': '0 1rem', 'border-radius': '1rem'}]">
-            <form onsubmit="return false">
+            <form onsubmit="return false" method = "POST" action="{{url_for('index')}}">
                 <div class="row">
                     <div class="button-wrapper col-md-4 col-12 form-group" id="searchbar">
-                        <input placeholder="Search..."></input>
+                        <input placeholder="Search..." name="query"></input>
                     </div>
                     <div class="button-wrapper col-md-3 col-6 form-group" id="charity-type">
-                        <select class="form-control">
+                        <select class="form-control" name="type">
                             <option disabled selected>Type</option>
                             <option>Food Bank</option>
                             <option>Youth Shelter</option>
@@ -17,7 +17,7 @@ Vue.component('search-menu', {
                         </select>
                     </div>
                     <div class="button-wrapper col-md-3 col-6 form-group" id="transport">
-                        <select class="form-control">
+                        <select class="form-control" name="transportation">
                             <option disabled selected>Transportation</option>
                             <option>Walking</option>
                             <option>Biking</option>
