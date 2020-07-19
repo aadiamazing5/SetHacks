@@ -50,8 +50,8 @@
                     <img src="static/assets/images/espere-banner.png">
                 </div>
                 <div class="col-md-8 col-12 description">
-                    <h1>Find ways to help out people in need near you!</h1>
-                    <h2>Try searching for a specific name or a type of charity.</h2>
+                    <h1>Find beneficial services near you!</h1>
+                    <h2>Try searching for a specific name or a type of service.</h2>
                 </div>
             </div>
             <form method="GET" action="{{url_for("index")}}" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
@@ -114,6 +114,7 @@
                 console.log("map: ", google.maps)
                 this.map = new google.maps.Map(document.getElementById('myMap'), {
                     center: {lat:61.180059, lng: -149.822075},
+                    fullscreen_control: false,
                     scrollwheel: false,
                     zoom: 4
                 })
@@ -139,12 +140,6 @@
                 }
             }
         })
-
-
-
-
-
-
 
 
         //Vue Instance
