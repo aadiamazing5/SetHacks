@@ -1,0 +1,326 @@
+<<<<<<< HEAD:application/static/css/styles.css
+section{
+    background-color: white;
+}
+h1{
+    font-size: 1.7rem !important;
+}
+h2{
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+}
+
+
+/* App */
+.app{
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Search Menu */
+.header{
+    margin-bottom: 2rem;
+    transition: all 0.3s linear;
+}
+.header .banner{
+    max-height: 200px;
+    border-right: #cecece 1px solid;
+    padding: 1rem 3rem;
+    margin: auto;
+}
+.header .banner img{
+    width: 100%;
+}
+.header .description{
+    margin: auto;
+    padding-left: 2.5rem;
+}
+@media (max-width: 767.98px) {
+    .header .banner{
+        border-right: none;
+    }
+    .header .description{
+        padding: 0;
+        text-align: center;
+    }
+    h1{
+        font-size: 1.2rem !important;
+    }
+    h2{
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+    }
+}
+
+.search-menu{
+    position: absolute;
+    top: 20%; bottom: 0; left: 0; right: 0;
+    margin: 0 1rem;
+    height: fit-content;
+    transition: all 0.3s linear;
+}
+form{
+    position: relative;
+    background-color: #2873E8;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 2rem 2rem 1rem 2rem;
+}
+@media (max-width: 767.98px) {
+    form{
+        padding-bottom: 2rem;
+    }
+}
+#favourite{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+    margin: 0;
+}
+.star:before {
+   content: "\2606";
+   position: absolute;
+   visibility:visible;
+}
+.star:checked:before {
+   content: "\2605";
+   position: absolute;
+}
+.search-menu input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    background-color: transparent;
+}
+.search-menu input::placeholder{
+    color: white;
+}
+.search-menu select{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    background-color: transparent;
+    padding-left: 0;
+    border-radius: 0;
+}
+.search-menu select:focus{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    background-color: transparent;
+    padding-left: none !important;
+}
+#go-btn{
+    padding: 0;
+}
+.search-menu button{
+    outline: none;
+    border-radius: 2rem;
+    background-color: #1c64da;
+    color: white;
+    width: 100%;
+}
+.search-menu button:hover{
+    color: white;
+}
+
+/* Map */
+.map-wrapper{
+    padding: 150px 50px 50px;
+    height: 100vh;
+    width: 100vw;
+}
+.map-background{
+    border: #cecece 1px solid;
+    border-radius: 1rem;
+    height: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+.map-background img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+=======
+section{
+    background-color: white;
+}
+h1{
+    font-size: 1.7rem !important;
+}
+h2{
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+}
+
+
+/* App */
+.app{
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Search Menu */
+.header{
+    margin-bottom: 2rem;
+    transition: all 0.3s linear;
+}
+.header .banner{
+    max-height: 200px;
+    border-right: #cecece 1px solid;
+    padding: 1rem 3rem;
+    margin: auto;
+}
+.header .banner img{
+    width: 100%;
+}
+.header .description{
+    margin: auto;
+    padding-left: 2.5rem;
+}
+@media (max-width: 767.98px) {
+    .header .banner{
+        border-right: none;
+    }
+    .header .description{
+        padding: 0;
+        text-align: center;
+    }
+    h1{
+        font-size: 1.2rem !important;
+    }
+    h2{
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+    }
+}
+
+.search-menu{
+    position: absolute;
+    top: 20%; bottom: 0; left: 0; right: 0;
+    margin: 0 1rem;
+    height: fit-content;
+    transition: all 0.3s linear;
+}
+form{
+    position: relative;
+    background-color: #2873E8;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    padding: 2rem 2rem 1rem 2rem;
+}
+@media (max-width: 767.98px) {
+    form{
+        padding-bottom: 2rem;
+    }
+}
+#favourite{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+    margin: 0;
+}
+.star:before {
+   content: "\2606";
+   position: absolute;
+   visibility:visible;
+}
+.star:checked:before {
+   content: "\2605";
+   position: absolute;
+}
+.search-menu input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    background-color: transparent;
+}
+.search-menu input::placeholder{
+    color: white;
+}
+.search-menu select{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    background-color: transparent;
+    padding-left: 0;
+    border-radius: 0;
+}
+.search-menu select:focus{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    color: white;
+    background-color: transparent;
+    padding-left: none !important;
+}
+#go-btn{
+    padding: 0;
+}
+.search-menu button{
+    outline: none;
+    border-radius: 2rem;
+    background-color: #1c64da;
+    color: white;
+    width: 100%;
+}
+.search-menu button:hover{
+    color: white;
+}
+
+/* Map */
+.map-wrapper{
+    padding: 150px 50px 50px;
+    height: 100vh;
+    width: 100vw;
+}
+.map-background{
+    border: #cecece 1px solid;
+    border-radius: 1rem;
+    height: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+.map-background #myMap{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+<<<<<<< HEAD
+=======
+.vue-map-container {
+    height: 450px;
+    max-width: 992px;
+    width: 100%;
+  }
+>>>>>>> 8cb0d691377c1b5ae4bf68966e41747800186329
+>>>>>>> 2928adcfc58b0c4c3b242e4a75e9ba67234aefa7:application/static/assets/css/styles.css
