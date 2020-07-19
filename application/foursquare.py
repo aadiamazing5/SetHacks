@@ -11,7 +11,6 @@ search_query = 'homeless shelter'
 radius = 2000
 LIMIT = 5
 
-
 def getVenues(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIMIT):
     address_list = []
 
@@ -27,6 +26,28 @@ def getVenues(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIM
     json_format = json.dumps({"addresses": address_list})
 
     return {"addresses": address_list}
+
+
+def returnParams(search, venue_type, transpo):
+    returnList = []
+    radius = 0
+    if transpo == "Car/Taxi":
+        radius = 100000
+    elif transpo == "Bus":
+        radius = 50000
+    elif transpo == "Biking":
+        radius = 25000
+    elif transpo == "Walking":
+        radius = 4000
+    else:
+        radius = 25000
+        
+    returnList.append(search)
+    returnList.append(venue_type)
+    returnList.append(radius)
+
+    return returnList
+
 
 
 def returnParams(search, venue_type, transpo):

@@ -36,7 +36,10 @@ def shutdown_server():
         raise RuntimeError('Not running with the Werkzeug Server')
     func()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 @app.route('/shutdown')
 def shutdown():
     shutdown_server()
