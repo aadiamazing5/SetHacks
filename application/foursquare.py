@@ -18,12 +18,20 @@ def getVenues(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIM
     url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&near={}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIMIT)
 
     results = requests.get(url).json()
+<<<<<<< HEAD
     if "venue" in results:
         for venue in results['response']['venues']:
             if "address" in results:
                 address = venue['location']['address']
                 address_list.append(address)
             print(venue)
+=======
+    if "venues" in results['response']:
+        for venue in results['response']['venues']:
+            if "address" in venue['location']:
+                address = venue['location']['address']
+                address_list.append(address)
+>>>>>>> fe100baf1521cab882a134211287363f627f5a9b
 
     json_format = json.dumps(address_list)
 
