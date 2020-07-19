@@ -52,7 +52,7 @@
                     <h2>Try searching for a specific name or a type of charity.</h2>
                 </div>
             </div>
-            <form method="GET" action="{{url_for("showMap")}}" onsubmit="return false" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
+            <form method="GET" action="{{url_for("index")}}" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
                 <div class="row">
                     <div class="star-wrapper col-md-1" id="favourite">
                         <i v-if="!favourite" class="far fa-star" @click="favourite=!favourite"></i>
@@ -84,9 +84,6 @@
                         <button type="submit" class="btn" @click="emitActive()">Go</button>
                     </div>
                 </div>
-            </form>
-            <form method="GET" action="{{url_for("showMap")}}">
-                <button>test</button>
             </form>
         </div>
     `,
