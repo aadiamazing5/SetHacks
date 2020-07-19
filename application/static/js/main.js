@@ -5,7 +5,7 @@ Vue.component('search-menu', {
         <div class="search-menu" :style="[(active) ? {'top': '0', 'margin': '0'} : {'top': '20%', 'margin': '0 1rem'}]">
             <div v-if="!active" class="row header">
                 <div class="col-md-4 col-12 banner">
-                    <img src="assets/images/espere-banner.png">
+                    <img src="application/static/images/espere-banner.png">
                 </div>
                 <div class="col-md-8 col-12 description">
                     <h1>Find ways to help out people in need near you!</h1>
