@@ -156,3 +156,11 @@ form{
     border-radius: 1rem;
 }
 
+<<<<<<< HEAD
+=======
+.vue-map-container {
+    height: 450px;
+    max-width: 992px;
+    width: 100%;
+  }
+>>>>>>> 8cb0d691377c1b5ae4bf68966e41747800186329

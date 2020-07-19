@@ -1,5 +1,12 @@
 from application import app, foursquare
 from flask import render_template, request, json, Response
+from flask_googlemaps import GoogleMaps
+from flask_googlemaps import Map
+
+# @app.route("/")
+# @app.route("/index")
+# def index():
+#     return render_template("index.html", index=True)
 
 @app.route("/")
 @app.route("/index", methods=["POST", "GET"])
@@ -29,7 +36,10 @@ def shutdown_server():
         raise RuntimeError('Not running with the Werkzeug Server')
     func()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 @app.route('/shutdown')
 def shutdown():
     shutdown_server()
