@@ -155,3 +155,9 @@ form{
     height: 100%;
     border-radius: 1rem;
 }
+
+.vue-map-container {
+    height: 450px;
+    max-width: 992px;
+    width: 100%;
+  }

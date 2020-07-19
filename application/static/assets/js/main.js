@@ -61,10 +61,23 @@ Vue.component('search-menu', {
 
 Vue.component('the-map', {
     props: ['active'],
+    
     template: `
+    
         <div class="map-wrapper">
             <div class="map-background">
-                <img src="https://picsum.photos/1200/500">
+                <div>
+                    <h1>Google Maps Demo</h1>
+                
+                    <GmapMap :center="center" :map-type-id="mapTypeId" :zoom="5">
+                        <GmapMarker
+                            v-for="(item, index) in markers"
+                            :key="index"
+                            :position="item.position"
+                            @click="center = item.position"
+                        />
+                    </GmapMap>  
+                </div>
             </div>
         </div>
     `

@@ -27,8 +27,34 @@
     <section>
         <div id="app">
             <app></app>
+            <script type="module">
+
+                require("dotenv").config();
+
+                import * as VueGoogleMaps from "vue2-google-maps";
+                Vue.use(VueGoogleMaps, {
+                load: { key: process.env.VUE_APP_GOOGLE_MAPS_API_KEY }
+                });
+
+                
+                export default {
+                  data() {
+                    return {
+                      center: { lat: -3.350235, lng: 111.995865 },
+                      mapTypeId: "terrain",
+                      markers: [
+                        { position: { lat: -0.48585, lng: 117.1466 } },
+                        { position: { lat: -6.9127778, lng: 107.6205556 } }
+                      ]
+                    };
+                  }
+                };
+            </script>
         </div>
+
+        
     </section>
+
 
 
     <!-- Vendor JS Files -->
