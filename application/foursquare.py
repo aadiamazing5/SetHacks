@@ -25,4 +25,25 @@ def getVenues(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, search_que
 
     return json_format
 
+def returnParams(search, venue_type, transpo):
+    returnList = []
+    radius = 0
+    if transpo == "Car/Taxi":
+        radius = 100000
+    elif transpo == "Bus":
+        radius = 50000
+    elif transpo == "Biking":
+        radius = 25000
+    elif transpo == "Walking":
+        radius = 4000
+    else:
+        radius = 25000
+    returnList.append(search)
+    returnList.append(venue_type)
+    returnList.append(radius)
+
+    return returnList
+
+
+
 

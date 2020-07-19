@@ -1,13 +1,20 @@
-from application import app
+from application import app, foursquare
 from flask import render_template, request, json, Response
 
 @app.route("/")
 @app.route("/index", methods=["POST", "GET"])
 def index():
-    trigger = request.form.get("trigger")
-    if trigger == 1:
-        print(request.form.get("trigger"))
-        print(request.form.get("transportation"))
-        print(request.form.get("type"))
-        print(request.form.get("query"))
+    address = request.args.get("searchbar")
+    venue_type = request.args.get("charity-type")
+    transpo_type = request.args.get("transport")
+
+    params_list = foursquare.returnParams(address, venue_type, transpo_type)
+
+    address = params_list[0]
+    venue_type = params_list[1]
+    rad = params_list[2]
+
+    json_venues = foursquare.getVenues(foursquare.CLIENT_ID, foursquare.CLIENT_SECRET, latitude, longitude, foursquare.VERSION, venue_type, rad, foursquare.LIMIT)
+
+
     return render_template("index.html", index=True)
