@@ -14,8 +14,30 @@
     <!-- CSS -->
     <link href="static/assets/css/styles.css" rel="stylesheet">
 
+    <!--Link-->
+
+    <link href="static/js/google-maps.vue">
+
     <!-- Other Vendor CSS Files -->
+<<<<<<< HEAD
+<<<<<<< HEAD
     <link href="static/assets/vendor/fontawesome-free-5.13.1-web/css/all.css" rel="stylesheet">
+=======
+<<<<<<< HEAD
+    <link href="static/vendor/animate.css/animate.css" rel="stylesheet">
+    <link href="static/vendor/fontawesome-free-5.13.1-web/css/all.css" rel="stylesheet">
+    <link href="static/vendor/WOW-master/css/libs/animate.css" rel="stylesheet">
+=======
+    <link href="static/assets/vendor/animate.css/animate.css" rel="stylesheet">
+    <link href="static/assets/vendor/fontawesome-free-5.13.1-web/css/all.css" rel="stylesheet">
+    <link href="static/assets/vendor/WOW-master/css/libs/animate.css" rel="stylesheet">
+>>>>>>> 9a726fe4a6c87ae1f9ff580a047550018a37bea8
+>>>>>>> 8cb0d691377c1b5ae4bf68966e41747800186329
+=======
+    <link href="static/assets/vendor/animate.css/animate.css" rel="stylesheet">
+    <link href="static/assets/vendor/fontawesome-free-5.13.1-web/css/all.css" rel="stylesheet">
+    <link href="static/assets/vendor/WOW-master/css/libs/animate.css" rel="stylesheet">
+>>>>>>> master
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -36,9 +58,45 @@
     <section>
         <div id="app">
             <app></app>
+            <script type="module">
+
+                require("dotenv").config();
+
+                import * as VueGoogleMaps from "vue2-google-maps";
+                Vue.use(VueGoogleMaps, {
+                load: { key: process.env.VUE_APP_GOOGLE_MAPS_API_KEY }
+                });
+
+                
+                export default {
+                  data() {
+                    return {
+                      center: { lat: -3.350235, lng: 111.995865 },
+                      mapTypeId: "terrain",
+                      markers: [
+                        { position: { lat: -0.48585, lng: 117.1466 } },
+                        { position: { lat: -6.9127778, lng: 107.6205556 } }
+                      ]
+                    };
+                  }
+                };
+            </script>
         </div>
+<<<<<<< HEAD
     </section>
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+
+        
+    </section>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+    
+>>>>>>> 8cb0d691377c1b5ae4bf68966e41747800186329
     <script>
         console.log({{json_data|tojson}});
         Vue.component('search-menu', {
@@ -50,8 +108,8 @@
                     <img src="static/assets/images/espere-banner.png">
                 </div>
                 <div class="col-md-8 col-12 description">
-                    <h1>Find ways to help out people in need near you!</h1>
-                    <h2>Try searching for a specific name or a type of charity.</h2>
+                    <h1>Find beneficial services near you!</h1>
+                    <h2>Try searching for a specific name or a type of service.</h2>
                 </div>
             </div>
             <form method="GET" action="{{url_for("index")}}" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
@@ -101,6 +159,8 @@
             }
         })
 
+        
+
         Vue.component('the-map', {
             props: ['active'],
             template: `
@@ -114,11 +174,15 @@
                 console.log("map: ", google.maps)
                 this.map = new google.maps.Map(document.getElementById('myMap'), {
                     center: {lat:61.180059, lng: -149.822075},
+                    fullscreen_control: false,
                     scrollwheel: false,
                     zoom: 4
                 })
             }
-        })
+       
+                    {{googlemap("my_awesome_map", lat=40, lng=-75)}}
+                   
+    `})
 
         Vue.component('app', {
             template: `
@@ -141,21 +205,41 @@
         })
 
 
-
-
-
-
-
-
         //Vue Instance
         var app = new Vue({
             delimiters:['${', '}'],
+            delimiters: ['${','}'],
             el: '#app'
         })
     </script>
 
     <!-- Main JS File -->
     <!-- <script src="static/assets/assets/js/main.js"></script> -->
+    <!-- <script src="static/assets/js/main.js"></script> -->
+
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="static/assets/vendor/WOW-master/dist/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- Main JS File -->
+    <script src="static/assets/js/main.js"></script>
 </body>
+    <!-- Main JS File -->
+    <script src="static/assets/js/main.js"></script>
+</body>
+
+<script>
+
+var app = new Vue({delimiters:['${', '}']}) 
+console.log({{json_data}});
+
+</script>
 
 </html>
