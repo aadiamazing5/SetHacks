@@ -14,6 +14,10 @@ Vue.component('search-menu', {
             </div>
             <form onsubmit="return false" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
                 <div class="row">
+                    <div class="star-wrapper col-md-1" id="favourite">
+                        <i v-if="!favourite" class="far fa-star" @click="favourite=!favourite"></i>
+                        <i v-if="favourite" class="fa fa-star" @click="favourite=!favourite"></i>
+                    </div>
                     <div class="button-wrapper col-md-4 col-12 form-group" id="searchbar">
                         <input placeholder="Search..."></input>
                     </div>
@@ -36,7 +40,7 @@ Vue.component('search-menu', {
                             <option>Bus</option>
                         </select>
                     </div>
-                    <div class="button-wrapper col-md-2 col-12" id="go-btn">
+                    <div class="button-wrapper col-md-1 col-12" id="go-btn">
                         <button type="submit" class="btn" @click="emitActive()">Go</button>
                     </div>
                 </div>
@@ -45,6 +49,7 @@ Vue.component('search-menu', {
     `,
     data() {
         return{
+            favourite: false
         }
     },
     methods: {
