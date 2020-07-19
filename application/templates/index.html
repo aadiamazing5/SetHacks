@@ -52,17 +52,17 @@
                     <h2>Try searching for a specific name or a type of charity.</h2>
                 </div>
             </div>
-            <form onsubmit="return false" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
+            <form method="GET" action="{{url_for("showMap")}}" onsubmit="return false" :style="[(active) ? {'border-radius': 'unset'} : {'border-radius': '1rem'}]">
                 <div class="row">
                     <div class="star-wrapper col-md-1" id="favourite">
                         <i v-if="!favourite" class="far fa-star" @click="favourite=!favourite"></i>
                         <i v-if="favourite" class="fa fa-star" @click="favourite=!favourite"></i>
                     </div>
                     <div class="button-wrapper col-md-4 col-12 form-group" id="searchbar">
-                        <input placeholder="Search..."></input>
+                        <input placeholder="Search..." name="query"></input>
                     </div>
                     <div class="button-wrapper col-md-3 col-6 form-group" id="charity-type">
-                        <select class="form-control">
+                        <select class="form-control" name="type">
                             <option disabled selected>Type</option>
                             <option>Food Bank</option>
                             <option>Youth Shelter</option>
@@ -72,7 +72,7 @@
                         </select>
                     </div>
                     <div class="button-wrapper col-md-3 col-6 form-group" id="transport">
-                        <select class="form-control">
+                        <select class="form-control" name="transport">
                             <option disabled selected>Transportation</option>
                             <option>Walking</option>
                             <option>Biking</option>
@@ -84,6 +84,9 @@
                         <button type="submit" class="btn" @click="emitActive()">Go</button>
                     </div>
                 </div>
+            </form>
+            <form method="GET" action="{{url_for("showMap")}}">
+                <button>test</button>
             </form>
         </div>
     `,
@@ -131,6 +134,7 @@
 
         //Vue Instance
         var app = new Vue({
+            delimiters:['${', '}'],
             el: '#app'
         })
     </script>
