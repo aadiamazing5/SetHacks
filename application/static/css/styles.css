@@ -59,6 +59,7 @@ h2{
     transition: all 0.3s linear;
 }
 form{
+    position: relative;
     background-color: #2873E8;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
@@ -68,6 +69,27 @@ form{
     form{
         padding-bottom: 2rem;
     }
+}
+#favourite{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+    margin: 0;
+}
+.star:before {
+   content: "\2606";
+   position: absolute;
+   visibility:visible;
+}
+.star:checked:before {
+   content: "\2605";
+   position: absolute;
 }
 .search-menu input{
     width: 100%;
@@ -102,12 +124,15 @@ form{
     background-color: transparent;
     padding-left: none !important;
 }
+#go-btn{
+    padding: 0;
+}
 .search-menu button{
-    width: 100%;
     outline: none;
     border-radius: 2rem;
     background-color: #1c64da;
     color: white;
+    width: 100%;
 }
 .search-menu button:hover{
     color: white;
