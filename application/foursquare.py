@@ -1,4 +1,5 @@
 import json, requests
+from geopy.geocoders import Nominatim
 
 CLIENT_ID = '5B2JWHSLBC1GMIJQL2WEUO3C2GB0F2NKHFC4R0NVRSOINQGG'
 CLIENT_SECRET = 'CVSR55SZI2XCI4ESQXTPET3TE5I4ACQX4NCPQC3QE10R30HG'
@@ -18,20 +19,11 @@ def getVenues(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIM
     url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&near={}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIMIT)
 
     results = requests.get(url).json()
-<<<<<<< HEAD
-    if "venue" in results:
-        for venue in results['response']['venues']:
-            if "address" in results:
-                address = venue['location']['address']
-                address_list.append(address)
-            print(venue)
-=======
     if "venues" in results['response']:
         for venue in results['response']['venues']:
             if "address" in venue['location']:
                 address = venue['location']['address']
                 address_list.append(address)
->>>>>>> fe100baf1521cab882a134211287363f627f5a9b
 
     json_format = json.dumps(address_list)
 
@@ -57,6 +49,16 @@ def returnParams(search, venue_type, transpo):
     returnList.append(radius)
 
     return returnList
+
+def addressToCoords(address):
+    lat_long = []
+    geolocator = Nominatim(user_agent="foursquare_agent")
+    location = geolocator.geocode(address)
+    latitude = location.latitude
+    longitude = location.longitude
+    lat_long.append(latitude)
+    lat_long.append(longitude)
+    return lat_long
 
 
 
