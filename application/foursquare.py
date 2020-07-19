@@ -10,10 +10,10 @@ search_query = 'homeless shelter'
 radius = 2000
 LIMIT = 5
 
-def getVenues(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, search_query, radius, LIMIT):
+def getVenues(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIMIT):
     address_list = []
 
-    url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&ll={},{}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, latitude, longitude, VERSION, search_query, radius, LIMIT)
+    url = 'https://api.foursquare.com/v2/venues/search?client_id={}&client_secret={}&near={}&v={}&query={}&radius={}&limit={}'.format(CLIENT_ID, CLIENT_SECRET, city, VERSION, search_query, radius, LIMIT)
 
     results = requests.get(url).json()
 

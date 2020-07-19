@@ -14,7 +14,7 @@ def index():
     venue_type = params_list[1]
     rad = params_list[2]
 
-    json_venues = foursquare.getVenues(foursquare.CLIENT_ID, foursquare.CLIENT_SECRET, latitude, longitude, foursquare.VERSION, venue_type, rad, foursquare.LIMIT)
+    json_venues = foursquare.getVenues(foursquare.CLIENT_ID, foursquare.CLIENT_SECRET, address, foursquare.VERSION, venue_type, rad, foursquare.LIMIT)
 
 
     return render_template("index.html", index=True)
