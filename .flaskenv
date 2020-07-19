@@ -1,2 +1,3 @@
 FLASK_ENV=development
 FLASK_APP=main.py
+FLASK_GOOGLEMAPS_KEY="AIzaSyDtXwbSQsAINxOwiYxF6kuDvbZFm0ADGr8"
